@@ -1,0 +1,225 @@
+.footer {
+    margin-top: 30px;
+    width: 100%;
+    padding-block: 1.5rem;
+    position: relative;
+    background-color: var(--main-bg-color);
+    color: var(--icons-color);
+    border-top: 1px solid var(--shadow-light-color);
+}
+
+.footer_box {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr repeat(2,1fr) 2fr;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.footer_box_social p {
+    margin: 1.5rem 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    color: var(--icons-color);
+}
+
+.footer_box h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    color: var(--icons-color);
+}
+
+.footer_box h3:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 30px;
+    height: 2px;
+    background-color: var(--icons-color);
+}
+
+/* SOCIAL */
+.footer_social {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.social_icon {
+    text-decoration: none;
+    color: var(--icons-color);
+    background-color: var(--shadow-light-color);
+    padding: 0.7rem;
+    border-radius: 50%;
+    transition: all .3s ease-in;
+    display: grid;
+    place-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.social_icon:hover {
+    background-color: var(--icons-color);
+    color: var(--shadow-dark-color);
+    transform: translateY(-3px);
+}
+
+/* MENU */
+.footer_menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_menu ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer_menu ul li a {
+    text-decoration: none;
+    color: var(--icons-color);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.footer_menu ul li a:hover {
+    color: var(--icons-light-color);
+    padding-left: 5px;
+}
+
+/* SUBSCRIBE */
+.subscribe_box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--shadow-light-color);
+    border-radius: 5rem;
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+.subscribe_box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 80%;
+    padding: 0.5rem 1rem;
+    color: var(--icons-color);
+}
+
+.subscribe_box input::placeholder {
+    color: var(--icons-color);
+    opacity: 0.8;
+}
+
+.subscribe_box_btn {
+    background-color: var(--icons-color);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: all 0.3s ease;
+}
+
+.subscribe_box_btn:hover {
+    background-color: var(--main-bg-color);
+    color: var(--icons-color);
+    box-shadow: var(--box-shadow);
+}
+
+.subscribe_box_send {
+    font-size: 1.5rem;
+    color: var(--shadow-dark-color);
+}
+
+.subscribe_box_info {
+    padding: 1rem 0;
+}
+
+.subscribe_box_info p {
+    color: var(--icons-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* FOOTER BOTTOM */
+.footer_bottom {
+    border-top: 1px solid var(--shadow-light-color);
+    padding: 1.5rem 0;
+}
+
+.footer_bottom_container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_bottom_container p {
+    font-size: 0.9rem;
+    color: var(--icons-color);
+    opacity: 0.8;
+}
+
+.footer_bottom_links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer_bottom_links a {
+    color: var(--icons-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer_bottom_links a:hover {
+    color: var(--icons-light-color);
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 1024px) {
+    .footer_box {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer_bottom_container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer_box {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer_bottom_container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .footer_bottom_links {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer_box {
+        grid-template-columns: 1fr;
+    }
+}

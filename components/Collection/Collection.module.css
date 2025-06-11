@@ -1,0 +1,126 @@
+.collection {
+    width: 100%;
+    padding: 3rem 0;
+    padding-bottom: 5rem;
+}
+
+.collection_box {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.collection_title {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 0 3rem 0;
+    text-align: center;
+}
+
+.collection_title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.collection_collections {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.collection_collections_btn {
+    background-color: #f0f0f0;
+    padding: 0.5rem;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.collection_collections_btn button {
+    background-color: transparent;
+    color: #555;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.collection_collections_btn .active {
+    background-color: var(--icons-color);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.collection_collections_btn button:hover:not(.active) {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+.collection_box {
+    width: 90%;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
+    .collection_title {
+        width: 90%;
+    }
+
+    .collection_box {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .collection_collections_btn {
+        width: 90%;
+        padding: 0.3rem;
+    }
+    
+    .collection_collections_btn button {
+        font-size: 0.7rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media screen and (min-device-width: 426px) and (max-device-width: 770px) {
+    .collection_box {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .collection_collections_btn {
+        width: 90%;
+    }
+    
+    .collection_collections_btn button {
+        font-size: 0.8rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+@media screen and (min-device-width: 771px) and (max-device-width: 1225px) {
+    .collection_box {
+        width: 90%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}

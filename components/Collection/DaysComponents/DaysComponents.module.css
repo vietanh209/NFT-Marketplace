@@ -1,0 +1,151 @@
+.daysComponent {
+    width: 100%;
+    border-radius: 1rem;
+    transition: all .3s ease-in;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.daysComponent:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.daysComponent_box_img_img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.daysComponent_box_profile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    padding: 0 3px 3px 3px;
+}
+
+.daysComponent_box_img_1,
+.daysComponent_box_img_2,
+.daysComponent_box_img_3 {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.daysComponent_box_img_1 {
+    border-bottom-left-radius: 0.5rem;
+}
+
+.daysComponent_box_img_2 {
+    /* No specific border radius for middle image */
+}
+
+.daysComponent_box_img_3 {
+    border-bottom-right-radius: 0.5rem;
+}
+
+.daysComponent_box_title {
+    padding: 1rem 1.5rem;
+    background-color: white;
+}
+
+.daysComponent_box_title h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.daysComponent_box_title_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.daysComponent_box_title_info_profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.daysComponent_box_title_info_profile_img {
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.daysComponent_box_title_info_profile span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.daysComponent_box_title_info_profile span svg {
+    color: #2081e2;
+    font-size: 1rem;
+}
+
+.daysComponent_box_title_info_price small {
+    font-weight: 700;
+    border: 2px solid var(--icons-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    color: var(--icons-color);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.daysComponent_box_title_info_price small:hover {
+    background-color: var(--icons-color);
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .daysComponent_box_img_img {
+        height: 220px;
+    }
+    
+    .daysComponent_box_img_1,
+    .daysComponent_box_img_2,
+    .daysComponent_box_img_3 {
+        height: 70px;
+    }
+    
+    .daysComponent_box_title {
+        padding: 0.8rem 1rem;
+    }
+    
+    .daysComponent_box_title h2 {
+        font-size: 1.1rem;
+    }
+    
+    .daysComponent_box_title_info_profile span {
+        font-size: 0.8rem;
+    }
+    
+    .daysComponent_box_title_info_price small {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .daysComponent_box_title_info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .daysComponent_box_title_info_price {
+        align-self: flex-start;
+    }
+}

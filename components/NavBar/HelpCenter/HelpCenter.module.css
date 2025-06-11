@@ -1,0 +1,53 @@
+.helpCenter a{
+    text-decoration: none;
+    color: black;
+    position: absolute;
+}
+
+.helpCenter {
+    width: 100%;
+    padding: 0.5rem 0;
+    background-color: var(--main-bg-color);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.link {
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: block;
+    width: 100%;
+    color: var(--icons-color);
+}
+
+.item {
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.itemName {
+    font-weight: 500;
+    color: var(--icons-color);
+    font-size: 0.95rem;
+}
+
+.itemDescription {
+    font-size: 0.8rem;
+    color: var(--icons-color);
+    opacity: 0.7;
+}
+
+.link:hover .item {
+    background-color: var(--shadow-light-color);
+}
+
+.link:active .item {
+    background-color: var(--shadow-dark-color);
+}

@@ -1,0 +1,36 @@
+.nftDetails {
+    width: 100%;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.nftDetails_container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nftDetails_box {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 3rem 0;
+    color: var(--icons-color);
+}
+
+@media screen and (max-width: 35em) {
+    .nftDetails {
+        padding: 0;
+    }
+    
+    .nftDetails_box {
+        margin-bottom: 2rem;
+    }
+    
+    .loading {
+        margin: 2rem 0;
+    }
+} 

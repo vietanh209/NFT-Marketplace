@@ -1,0 +1,52 @@
+.NFTDetailsPage {
+    width: 100%;
+    margin-block: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.NFTDetailsPage_box {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.NFTDetailsPage_box_left,
+.NFTDetailsPage_box_right {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+    .NFTDetailsPage_box {
+        width: 90%;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .NFTDetailsPage {
+        margin-block: 3rem;
+    }
+
+    .NFTDetailsPage_box {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 35em) {
+    .NFTDetailsPage {
+        margin-block: 2rem;
+    }
+
+    .NFTDetailsPage_box {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}

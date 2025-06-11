@@ -1,0 +1,113 @@
+.NFTDetailsImg {
+    width: 100%;
+}
+
+.NFTDetailsImg_box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.NFTDetailsImg_box_NFT {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.NFTDetailsImg_box_NFT_like {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.viewButton {
+    border-radius: 0.75rem;
+    margin-top: 0.25rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.likeContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+.likeButton {
+    border-radius: 0.75rem;
+    z-index: 1;
+}
+
+.NFTDetailsImg_box_NFT_img {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.nftImage {
+    width: 100%;
+    border: 1px solid var(--shadow-light-color);
+    padding: 0.25rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.NFTDetailsImg_box_accordion {
+    width: 100%;
+    border: 1px solid var(--shadow-light-color);
+    border-radius: 0.75rem;
+    margin-top: 0.5rem;
+    background-color: var(--main-bg-color);
+    overflow: hidden;
+}
+
+.NFTDetailsImg_box_description,
+.NFTDetailsImg_box_details {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    border-bottom: 1px solid var(--shadow-light-color);
+}
+
+.NFTDetailsImg_box_description_box,
+.NFTDetailsImg_box_details_box {
+    padding: 1rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.NFTDetailsImg_box_details_box p {
+    padding: 0.5rem 0;
+}
+
+@media screen and (max-width: 35em) {
+    .NFTDetailsImg_box_NFT_like {
+        top: 0.5rem;
+        left: 0.5rem;
+        right: 0.5rem;
+    }
+    
+    .NFTDetailsImg_box_description,
+    .NFTDetailsImg_box_details {
+        padding: 0.75rem;
+    }
+    
+    .NFTDetailsImg_box_description_box,
+    .NFTDetailsImg_box_details_box {
+        padding: 0.75rem;
+    }
+}

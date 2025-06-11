@@ -1,0 +1,103 @@
+.profile {
+    position: absolute;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    border-radius: 1rem;
+    left: -1rem;
+    width: 17rem;
+    top: 0rem;
+    z-index: 9999;
+    background-color: whitesmoke;
+    /* background-color: var(--main-bg-color); */
+    border: 1px solid rgba(var(--shadow-light-color-rgb), 0.3);
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+    padding-bottom: 0.5rem;
+}
+
+.profile_account {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    border-bottom: 1px solid rgba(var(--shadow-light-color-rgb), 0.2);
+    background-color: var(--main-bg-color);
+}
+
+.profile_account_img {
+    border-radius: 50%;
+    border: 2px solid rgba(var(--icons-color-rgb), 0.2);
+}
+
+.profile_account_info {
+    line-height: 1.2;
+}
+
+.profile_account_info p {
+    font-weight: 600;
+    margin: 0 0 0.3rem 0;
+    color: var(--icons-color);
+}
+
+.profile_account_info small {
+    color: var(--icons-color);
+    opacity: 0.8;
+    font-size: 0.8rem;
+}
+
+.profile_menu {
+    padding: 0.5rem 0;
+    background-color: var(--main-bg-color);
+}
+
+.profile_menu_one, .profile_menu_two {
+    margin-bottom: 0.5rem;
+}
+
+.profile_menu_one_item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    transition: all .3s ease-in;
+    cursor: pointer;
+}
+
+.profile_menu_one_item svg {
+    color: var(--icons-color);
+    font-size: 1.2rem;
+}
+
+.profile_menu_one_item a {
+    text-decoration: none;
+    color: var(--icons-color);
+    width: 100%;
+    display: block;
+    font-weight: 500;
+}
+
+.profile_menu_one_item:hover a{
+    color: var(--main-bg-color);
+}
+
+.profile_menu_one_item:hover {
+    background-color: var(--icons-color);
+    color: var(--main-bg-color);
+}
+
+.profile_menu_one_item:hover svg {
+    color: var(--main-bg-color);
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 768px) {
+    .profile {
+        left: -14rem;
+    }
+}
+
+
+
+
+
+

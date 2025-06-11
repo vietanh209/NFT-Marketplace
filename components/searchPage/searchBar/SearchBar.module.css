@@ -1,0 +1,33 @@
+.searchBar {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.searchBar_box {
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--main-bg-color);
+  box-shadow: var(--box-shadow);
+}
+
+.searchBar_box_input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+.search_input_wrapper {
+  width: 100%;
+  min-height: 80px;
+}
+
+.search_input_wrapper > div {
+  width: 100% !important;
+}
+
+@media screen and (max-width: 35em) {
+  .searchBar {
+    padding: 0 1rem;
+  }
+}
