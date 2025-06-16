@@ -2,13 +2,13 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
+import { Contract, utils } from "ethers";
 import type { Provider } from "@ethersproject/providers";
 import type {
   ERC165,
   ERC165Interface,
 } from "../../../../../@openzeppelin/contracts/utils/introspection/ERC165";
-
+import { Signer } from "@ethersproject/abstract-signer";
 const _abi = [
   {
     inputs: [

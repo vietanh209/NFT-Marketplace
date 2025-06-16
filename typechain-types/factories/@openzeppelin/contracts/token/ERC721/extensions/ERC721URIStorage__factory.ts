@@ -2,12 +2,13 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
+import { Contract, utils } from "ethers";
 import type { Provider } from "@ethersproject/providers";
 import type {
   ERC721URIStorage,
   ERC721URIStorageInterface,
 } from "../../../../../../@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage";
+import { Signer } from "@ethersproject/abstract-signer";
 
 const _abi = [
   {
