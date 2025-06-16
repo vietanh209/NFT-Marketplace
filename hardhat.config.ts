@@ -21,10 +21,11 @@ module.exports = {
     hardhat: {
       chainId: 1337,
     },
-    // bsctest: {
-    //   url : "https://data-seed-prebsc-1-s1.binance.org:8545/",
-    //   accounts: [process.env.PRIV_KEY]
-    // },
+  sepolia: {
+  url: "https://sepolia.infura.io/v3/9fc68fdfb14f4ab1b76a6ba38c0c316f",
+  accounts: ["1b9fee13b61c76d6bcbab03808740a4351dad720777b8e4d06c5d3438e91e8c4"],
+  
+},
     eth_mumbai: {
       url: process.env.ALCHEMY_API_URL || "https://eth-sepolia.g.alchemy.com/v2/6e8TIcwlmMm_FZLknMK6hg-zvrDi5iBt",
       accounts: [
