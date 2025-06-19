@@ -37,6 +37,9 @@ import {
   TableRow,
   TableCell,
 } from "@nextui-org/react";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
 const NFTDescription = ({ nft }) => {
   const [ethPrice, setEthPrice] = useState(null);
   const [showCheckShare, setShowCheckShare] = useState(false);
@@ -52,6 +55,8 @@ const NFTDescription = ({ nft }) => {
   const [openModelOffer, setOpenModalOffer] = useState(false);
   const [openModelSell, setOpenModalSell] = useState(false);
   const [openModelGift, setOpenModalGift] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
   // data select offer
   // SMART CONTRACT DATA
@@ -68,7 +73,7 @@ const NFTDescription = ({ nft }) => {
     createSale,
     uploadJSONToPinata,
     unpinFromPinata,
-    transferNFT
+    transferNFT,
   } = useContext(NFTMarketplaceContext);
   // loading
 
@@ -81,7 +86,7 @@ const NFTDescription = ({ nft }) => {
 
   const handleOpenGift = () => {
     setOpenModalGift(true);
-  }
+  };
 
   const handleCancelMarket = async () => {
     try {
@@ -101,7 +106,21 @@ const NFTDescription = ({ nft }) => {
       await buyNFT(nft);
       setIsLoadingBuy(false);
     } catch (error) {
-      console.error("Error cancelling sale:", error);
+      // Kiểm tra lỗi thiếu tiền
+      const errMsg = error?.message || error?.data?.message || "";
+      if (
+        errMsg.toLowerCase().includes("insufficient funds") ||
+        errMsg.toLowerCase().includes("not enough funds") ||
+        errMsg.toLowerCase().includes("balance")
+      ) {
+        setErrorMessage("Số dư tài khoản không đủ để thực hiện giao dịch");
+      } else {
+        setErrorMessage("Insufficient wallet balance");
+      }
+
+      showSwal();
+      setIsError(true);
+      setIsLoadingBuy(false);
     } finally {
       setIsLoadingBuy(false);
     }
@@ -182,6 +201,14 @@ const NFTDescription = ({ nft }) => {
     setTimeout(() => {
       setShowCheckShare(false);
     }, 700);
+  };
+
+  const showSwal = () => {
+    withReactContent(Swal).fire({
+      icon: "error",
+      title: <strong>{errorMessage}</strong>,
+      confirmButtonText: "OK",
+    });
   };
 
   // share on twitter
@@ -363,7 +390,7 @@ const NFTDescription = ({ nft }) => {
                           Style.NFTDescription_box_profile_biding_box_timer
                         }
                       >
-                        {<CountDown timestamp={nft.timestamp}/>}
+                        {<CountDown timestamp={nft.timestamp} />}
                       </div>
                     </div>
                     <div className="border-t border-bordercustom w-full"></div>
