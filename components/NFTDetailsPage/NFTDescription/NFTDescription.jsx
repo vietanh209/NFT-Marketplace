@@ -99,32 +99,39 @@ const NFTDescription = ({ nft }) => {
       setIsLoadingCancel(false);
     }
   };
+const MySwal = withReactContent(Swal)
+const handleBuy = async () => {
+  try {
+    setIsLoadingBuy(true);
+    await buyNFT(nft);
+    setIsLoadingBuy(false);
+  } catch (error) {
+    const errMsg = error?.message || error?.data?.message || "";
 
-  const handleBuy = async () => {
-    try {
-      setIsLoadingBuy(true);
-      await buyNFT(nft);
-      setIsLoadingBuy(false);
-    } catch (error) {
-      // Kiểm tra lỗi thiếu tiền
-      const errMsg = error?.message || error?.data?.message || "";
-      if (
-        errMsg.toLowerCase().includes("insufficient funds") ||
-        errMsg.toLowerCase().includes("not enough funds") ||
-        errMsg.toLowerCase().includes("balance")
-      ) {
-        setErrorMessage("Số dư tài khoản không đủ để thực hiện giao dịch");
-      } else {
-        setErrorMessage("Insufficient wallet balance");
-      }
+    let title = "Insufficient wallet balance";
+    let description = "Your wallet does not have enough funds to buy this NFT";
 
-      showSwal();
-      setIsError(true);
-      setIsLoadingBuy(false);
-    } finally {
-      setIsLoadingBuy(false);
+    if (
+      errMsg.toLowerCase().includes("insufficient funds") ||
+      errMsg.toLowerCase().includes("not enough funds") ||
+      errMsg.toLowerCase().includes("balance")
+    ) {
+      description = "Số dư tài khoản không đủ để thực hiện giao dịch.";
     }
-  };
+
+    MySwal.fire({
+      icon: "error",
+      title: `<strong>${title}</strong>`,
+      html: `<p>${description}</p>`,
+      confirmButtonText: "OK",
+      confirmButtonColor: "#8b5cf6",
+    });
+
+    setIsError(true);
+  } finally {
+    setIsLoadingBuy(false);
+  }
+};
 
   const handleCancelOffer = async () => {
     try {

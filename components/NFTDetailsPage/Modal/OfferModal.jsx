@@ -14,6 +14,8 @@ import {
 } from "@nextui-org/react";
 import { BsFillTagsFill } from "react-icons/bs";
 import { parseDate } from "@internationalized/date";
+import Swal from "sweetalert2";
+
 const OfferModal = ({
   openModelOffer,
   setOpenModalOffer,
@@ -116,29 +118,46 @@ const OfferModal = ({
     });
   };
   const handleMakeOffer = async () => {
-    let desiredTimestamp = null;
-    // Ensure selectedDates.end is correctly formatted
-    if (selectedDates.end instanceof Date) {
-      desiredTimestamp = selectedDates.end.toISOString();
-    } else if (selectedDates.end) {
-      desiredTimestamp = new Date(selectedDates.end).toISOString();
-    } else {
-      console.error("No valid end date selected.");
-      return;
-    }
-    try {
-      setIsLoadingOffer(true);
-      await makeOffer(nft, valueOffer, desiredTimestamp);
-      await fetchOffers(nft.tokenId);
-      setOpenModalOffer();
-      setIsLoadingOffer(false);
-      setIsActiveOffer(true);
-    } catch (error) {
-      console.error("Error making offer:", error);
-      setIsLoadingOffer(false);
-      return;
-    }
-  };
+  let desiredTimestamp = null;
+
+  // Định dạng lại ngày kết thúc
+  if (selectedDates.end instanceof Date) {
+    desiredTimestamp = selectedDates.end.toISOString();
+  } else if (selectedDates.end) {
+    desiredTimestamp = new Date(selectedDates.end).toISOString();
+  } else {
+    console.error("No valid end date selected.");
+    return;
+  }
+
+  if (parseFloat(valueOffer) > parseFloat(accountBalance)) {
+    Swal.fire({
+      icon: "error",
+      title: "Insufficient wallet balance",
+      text: "Your wallet does not have enough funds to place this offer",
+      confirmButtonColor: "#8b5cf6"
+    });
+    return;
+  }
+
+  try {
+    setIsLoadingOffer(true);
+    await makeOffer(nft, valueOffer, desiredTimestamp);
+    await fetchOffers(nft.tokenId);
+    setOpenModalOffer(false);
+    setIsLoadingOffer(false);
+    setIsActiveOffer(true);
+  } catch (error) {
+    console.error("Error making offer:", error);
+    Swal.fire({
+      icon: "error",
+      title: "Offer failed",
+      text: error.message || "An error occurred while placing the offer.",
+    });
+    setIsLoadingOffer(false);
+  }
+};
+
   const handleCloseModal = () => {
     setOpenModalOffer(false);
   };
