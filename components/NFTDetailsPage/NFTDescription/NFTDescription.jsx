@@ -121,7 +121,7 @@ const handleBuy = async () => {
 
     MySwal.fire({
       icon: "error",
-      title: `<strong>${title}</strong>`,
+      title: `Insufficient wallet balance`,
       html: `<p>${description}</p>`,
       confirmButtonText: "OK",
       confirmButtonColor: "#8b5cf6",
