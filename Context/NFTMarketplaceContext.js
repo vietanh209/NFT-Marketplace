@@ -166,6 +166,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   }, []);
 
   // upload to ipfs function
+  
   const uploadFileToIPFS = async (file) => {
     try {
       console.log("File being uploaded:", file?.name, "Size:", file?.size);

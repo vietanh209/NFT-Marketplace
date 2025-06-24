@@ -55,7 +55,7 @@ const HeroSection = () => {
                             <Card className="min-w-[250px]">
                                 <CardHeader className="justify-between">
                                     <div className="flex gap-5">
-                                    <Avatar isBordered radius="full" size="md" src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+                                    <Avatar isBordered radius="full" size="md" src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/312640198_1189701841620105_4648486811367013179_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=uqUJ_bjoQ2wQ7kNvwFosoTl&_nc_oc=Adm-qM2k2oVdZ5lgDr1xSxDO_VoWo91wljBpE_eH_9lxywygiQ4f73UHnvfzso78mok&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_gid=Bxerh5vrHWd_SNhcf7TyUg&oh=00_AfMTcuelodgPWemdLzDl_BgVkjPdKk0I6luV0c7idc27dQ&oe=6860972E" />
                                     <div className="flex flex-col gap-1 items-start justify-center">
                                         <h4 className="text-small font-semibold leading-none text-default-600">Việt Anh</h4>
                                         <h5 className="text-small tracking-tight text-default-400">@tys.209</h5>
