@@ -89,6 +89,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState("");
   const [accountBalance, setAccountBalance] = useState("");
   const [allOffers, setAllOffers] = useState([]);
+  const [walletName, setWalletName] = useState("");
   // TRANSFER FUNDs
   const [transactionCount, setTransactionCount] = useState("");
   const [transaction, setTransaction] = useState([]);
@@ -113,6 +114,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const bal = ethers.utils.formatEther(getBalance);
       // console.log("api key", api_key ,api_serect, pinata_JWT);
       setAccountBalance(bal);
+      const ensName = await provider.lookupAddress(accounts[0]);
+      setWalletName(ensName || "No ENS name found");
     } catch (error) {
       console.log("check if wallet connect error", error);
     }
@@ -120,6 +123,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   useEffect(() => {
     checkIfWalletConnected();
+    console.log ("walletName"+walletName)
   }, []);
   // connect wallet function
   const connectWallet = async () => {
@@ -371,7 +375,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
     }
   }
 
-  // --FETCH nft functino
+  // --FETCH nft functinon
   // const fetchNFTS = async () => {
   //   try {
   //     const contract = await connectingWithSmartContract();
@@ -947,6 +951,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       value={{
         titleData,
         // checkContract
+        walletName,
         checkIfWalletConnected,
         connectWallet,
         disconnectWallet,

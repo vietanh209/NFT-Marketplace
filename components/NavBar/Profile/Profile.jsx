@@ -12,7 +12,7 @@ import { NFTMarketplaceContext } from '../../../Context/NFTMarketplaceContext';
 
 const Profile = ({currentAccount, setProfile}) => {
   // Lấy context từ NFT Marketplace
-  const { connectWallet } = useContext(NFTMarketplaceContext);
+  const { connectWallet, walletName } = useContext(NFTMarketplaceContext);
 
   // Xử lý sự kiện khi click vào menu item
   const handleItemClick = (e) => {
@@ -37,7 +37,7 @@ const Profile = ({currentAccount, setProfile}) => {
       window.location.reload();
     }
   };
-
+console.log (walletName)
   return (
     <div className={Style.profile}>
       <div className={Style.profile_account}>
@@ -47,11 +47,11 @@ const Profile = ({currentAccount, setProfile}) => {
           className={Style.profile_account_img}
         />
         <div className={Style.profile_account_info}>
-          <p>daniel</p>
+          <p>{walletName}</p>
           <small>{currentAccount && currentAccount.length > 18 ? `${currentAccount.slice(0, 18)}...` : currentAccount || "Not connected"}</small>
         </div>
       </div>
-      <div className={Style.profile_menu}>
+     {/* <div className={Style.profile_menu}>
           <div className={Style.profile_menu_one}>
             <div className={Style.profile_menu_one_item} onClick={handleItemClick}>
               <FaUserAlt/>
@@ -86,7 +86,7 @@ const Profile = ({currentAccount, setProfile}) => {
               </p>
             </div>
           </div>
-      </div>
+      </div> */}
     </div>
   )
 }
