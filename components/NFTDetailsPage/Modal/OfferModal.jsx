@@ -169,7 +169,7 @@ const OfferModal = ({
             Placing an offer for item
           </ModalHeader>
           <ModalBody>
-            <div className="flex items-center">
+            <div className="gap-3 flex items-center"> 
               <div className="w-[49%] flex flex-col justify-between gap-5">
                 <div className="m-2 flex flex-col">
                   <h2>Offer Price</h2>

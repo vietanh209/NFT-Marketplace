@@ -9,8 +9,7 @@
 }
 
 .bigNFTSlider_box_left {
-    grid-column: 1 / 7;
-    grid-row: 1 / -1;
+    grid-column: 1 / 6;
     background-color: var(--main-bg-color);
     box-shadow: var(--box-shadow-2);
     border-radius: 1rem;
