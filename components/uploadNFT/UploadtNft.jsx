@@ -257,7 +257,7 @@ const UploadNFT = ({ uploadFileToIPFS, createNFT }) => {
           </div>
           <div>
             <label htmlFor="Price" className="font-semibold">
-              Supply *
+              Price*
             </label>
             <div>
               <Input
